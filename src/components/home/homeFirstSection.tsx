@@ -55,88 +55,7 @@ function HomeFirstSection({}: Props) {
           quality={100}
         />
       </motion.div>
-      <div className={style.backgroundAnimation}>
-        <ul>
-          <motion.li
-            initial={{ rotateZ: 0 }}
-            animate={{ rotateZ: isSpecInView ? 10 : 0 }}
-          >
-            {" "}
-            <Image
-              className={style.tarocchi}
-              src="/img/card.svg"
-              alt="tarocchi"
-              width={220}
-              height={356}
-              quality={100}
-            />
-          </motion.li>
-          <motion.li
-            initial={{ rotateZ: 0 }}
-            animate={{ rotateZ: isSpecInView ? 20 : 0 }}
-          >
-            {" "}
-            <Image
-              className={style.tarocchi}
-              src="/img/card.svg"
-              alt="tarocchi"
-              width={220}
-              height={356}
-              quality={100}
-            />
-          </motion.li>
-          <motion.li
-            initial={{ rotateZ: 0 }}
-            animate={{ rotateZ: isSpecInView ? 30 : 0 }}
-          >
-            {" "}
-            <Image
-              className={style.tarocchi}
-              src="/img/card.svg"
-              alt="tarocchi"
-              width={220}
-              height={356}
-              quality={100}
-            />
-          </motion.li>
-          <motion.li
-            initial={{ rotateZ: 0 }}
-            animate={{ rotateZ: isSpecInView ? 40 : 0 }}
-          >
-            {" "}
-            <Image
-              className={style.tarocchi}
-              src="/img/card.svg"
-              alt="tarocchi"
-              width={220}
-              height={356}
-              quality={100}
-            />
-          </motion.li>
-          <motion.li
-            initial={{ rotateZ: 0 }}
-            animate={{ rotateZ: isSpecInView ? 50 : 0 }}
-          >
-            {" "}
-            <Image
-              className={style.tarocchi}
-              src="/img/card.svg"
-              alt="tarocchi"
-              width={220}
-              height={356}
-              quality={100}
-            />
-          </motion.li>
-        </ul>
-        <Image
-          className={style.tarocchi}
-          src="/img/card.svg"
-          alt="tarocchi"
-          width={220}
-          height={356}
-          quality={100}
-        />
-      </div>
+
       <motion.section
         ref={mainContent}
         className={style.firstSection}
@@ -144,16 +63,97 @@ function HomeFirstSection({}: Props) {
       >
         <motion.div className={style.heading}>
           <h2 className={title.className}>It&apos;s a kind of magic</h2>
-          <span>...nope!</span>
         </motion.div>
+        <div className={style.backgroundAnimation}>
+          <ul>
+            <motion.li
+              initial={{ rotateZ: 0 }}
+              animate={{ rotateZ: isSpecInView ? 10 : 0 }}
+            >
+              {" "}
+              <Image
+                className={style.tarocchi}
+                src="/img/card.svg"
+                alt="tarocchi"
+                width={220}
+                height={356}
+                quality={100}
+              />
+            </motion.li>
+            <motion.li
+              initial={{ rotateZ: 0 }}
+              animate={{ rotateZ: isSpecInView ? 20 : 0 }}
+            >
+              {" "}
+              <Image
+                className={style.tarocchi}
+                src="/img/card.svg"
+                alt="tarocchi"
+                width={220}
+                height={356}
+                quality={100}
+              />
+            </motion.li>
+            <motion.li
+              initial={{ rotateZ: 0 }}
+              animate={{ rotateZ: isSpecInView ? 30 : 0 }}
+            >
+              {" "}
+              <Image
+                className={style.tarocchi}
+                src="/img/card.svg"
+                alt="tarocchi"
+                width={220}
+                height={356}
+                quality={100}
+              />
+            </motion.li>
+            <motion.li
+              initial={{ rotateZ: 0 }}
+              animate={{ rotateZ: isSpecInView ? 40 : 0 }}
+            >
+              {" "}
+              <Image
+                className={style.tarocchi}
+                src="/img/card.svg"
+                alt="tarocchi"
+                width={220}
+                height={356}
+                quality={100}
+              />
+            </motion.li>
+            <motion.li
+              initial={{ rotateZ: 0 }}
+              animate={{ rotateZ: isSpecInView ? 50 : 0 }}
+            >
+              {" "}
+              <Image
+                className={style.tarocchi}
+                src="/img/card.svg"
+                alt="tarocchi"
+                width={220}
+                height={356}
+                quality={100}
+              />
+            </motion.li>
+          </ul>
+          <Image
+            className={style.tarocchi}
+            src="/img/card.svg"
+            alt="tarocchi"
+            width={220}
+            height={356}
+            quality={100}
+          />
+        </div>
         <div className={style.content}>
           <motion.p style={{ marginTop: 0 }}>
             Creare l&rsquo;esperienza utente di siti web, ecommerce, app...
             significa lavorare su aspetti come layout, colori, grafica e
-            tipografia, applicando i principi di design e di usabilità per poi
-            produrre prototipi e il prodotto finale.
+            tipografia, applicando i principi di design e di usabilità per
+            produrre prima prototipi e poi il prodotto finale.
             <br />
-            Tante figure professionali possono essere coinvolte in questo
+            Diverse figure professionali possono essere coinvolte in questo
             processo e quasi sempre è un lavoro di squadra.
             <br />
             <strong>Quindi, no.</strong> <br />
