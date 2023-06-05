@@ -3,9 +3,8 @@ import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import style from "./homeHeader.module.scss";
 import { title } from "@/utils/fonts";
-
 import { useTransform, useScroll, motion } from "framer-motion";
-
+import Particle from "./particle";
 type Props = {};
 
 function HomeHeader({}: Props) {
@@ -33,9 +32,11 @@ function HomeHeader({}: Props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className={style.wrapperScroll}>
       <header className={style.mainHeader}>
+        <Particle />
         <Image
           className={style.spinner}
           src="/img/spinner.webp"

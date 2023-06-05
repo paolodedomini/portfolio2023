@@ -54,6 +54,10 @@
     }
   }
   .content {
+    strong {
+      text-decoration: underline;
+      font-size: 2rem;
+    }
     p {
       line-height: 1.8;
       padding: 0 1rem;
@@ -70,8 +74,8 @@
     }
     .spec {
       display: flex;
-      align-items: center;
-      gap: 1rem;
+      align-items: flex-start;
+      gap: 2rem;
       margin-bottom: 1rem;
       img {
         opacity: 0;
@@ -102,7 +106,26 @@
     }
   }
 }
-
+.wrapperModal {
+  position: relative;
+  margin: 0 20px;
+  display: inline-block;
+  strong {
+    display: inline-block;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .modal {
+    position: absolute;
+    top: -150%;
+    left: -11px;
+    z-index: 100;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 300px;
+    width: 350px;
+  }
+}
 @keyframes vibrate-1 {
   0% {
     -webkit-transform: translate(0);

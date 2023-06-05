@@ -1,0 +1,16 @@
+.headerImage {
+  z-index: -1;
+}
+.content {
+  display: flex;
+  max-width: 800px;
+  align-items: center;
+  margin: 0 auto;
+  gap: 40px;
+  padding: 16rem 0 16rem 0;
+  color: white;
+  h3 {
+    font-size: 3rem;
+    margin: 0;
+  }
+}

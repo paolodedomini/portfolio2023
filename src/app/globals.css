@@ -13,3 +13,6 @@ html {
   font-size: 16px;
   overscroll-behavior: none;
 }
+section {
+  position: relative;
+}
