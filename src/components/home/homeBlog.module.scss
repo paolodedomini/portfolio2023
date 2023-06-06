@@ -1,0 +1,56 @@
+.homeBlog {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 800px;
+  justify-content: space-between;
+  .boxCard {
+    width: 240px;
+    height: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.7s;
+    &:hover {
+      .front {
+        transform: rotateY(180deg);
+      }
+      .back {
+        transform: rotateY(0deg);
+      }
+    }
+    img {
+      z-index: -1;
+    }
+    .front,
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transition: all ease-in-out 0.7s;
+      border-radius: 10px;
+    }
+    .front {
+      background-color: #bbb;
+      color: black;
+      transform: rotateY(0deg);
+    }
+
+    .back {
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font-size: 1.5rem;
+        width: 150px;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  }
+}

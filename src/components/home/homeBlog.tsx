@@ -1,31 +1,31 @@
 "use client";
-
-// Retrieve the list of blog posts from Contentful
-import { useState, useEffect } from "react";
-
+import { useGetBlogPostsPreview } from "@/utils/data";
+import style from "./homeBlog.module.scss";
+import Image from "next/image";
 type Props = {};
 
 function HomeBlog({}: Props) {
-  const [data, setData] = useState<any>([]);
+  const posts: any = useGetBlogPostsPreview(4);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://api.contentful.com/spaces/9srekbk2xi6w/environments/master/entries?access_token=CFPAT-GBM9LPJWAuK0r_taVGPiW8tESLjVicEtD0zhiboTPTA"
+  console.log("posts", posts.items);
+
+  return (
+    <section className={style.homeBlog}>
+      {posts.items?.map((post: any) => {
+        return (
+          <div className={style.boxCard} key={post.sys.id}>
+            <div className={style.front}>
+              <Image src="/img/cardblog.webp" alt="" fill />
+            </div>
+            <div className={style.back}>
+              <Image src="/img/cardblog.webp" alt="" fill />
+              <h3>{post.fields.title.it}</h3>
+            </div>
+          </div>
         );
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  console.log(data.items);
-
-  return <div>HomeBlog</div>;
+      })}
+    </section>
+  );
 }
 
 export default HomeBlog;

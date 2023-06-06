@@ -233,7 +233,7 @@ function HomeFirstSection({}: Props) {
               <div className={style.right}>
                 <h3 className={title.className}>Coding</h3>
                 <p>
-                  Approdo al mondo del coding dopo anni di esperienza nel campo
+                  Arrivo nel mondo del coding dopo anni di esperienza nel campo
                   del graphic design per la necessità di essere coinvolto
                   direttamente in tutte le fasi di progetto, dal design alla
                   produzione delle varie interfacce. <br />
