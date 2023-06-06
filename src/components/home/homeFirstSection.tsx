@@ -208,9 +208,9 @@ function HomeFirstSection({}: Props) {
               <div className={style.right}>
                 <h3 className={title.className}>Graphic Design</h3>
                 <p>
-                  E' quello che ho studiato e praticato per anni, dal settore
-                  editoriale a quello della moda per poi specializzarmi in tutto
-                  ciò che riguarda il mondo del web. <br />
+                  E&apos; quello che ho studiato e praticato per anni, dal
+                  settore editoriale a quello della moda per poi specializzarmi
+                  in tutto ciò che riguarda il mondo del web. <br />
                   La comunicazione/progettazione visiva è quello che mi
                   appassiona di più del mio lavoro.
                   <br /> Utilizzo software adobe: Photoshop e illustrator

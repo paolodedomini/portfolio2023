@@ -105,9 +105,9 @@ function HomeHeader({}: Props) {
             <motion.p style={{ opacity: opacityParagraph }}>
               Progetto e realizzo funzionalità ed estetica di siti e
               applicazioni web. <br />
-              Il mio lavoro consiste nel creare "oggetti" digitali facilmente
-              utilizzabili dagli utenti nel rispetto dei requisiti e degli
-              obbiettivi di progetto.
+              Il mio lavoro consiste nel creare &quot;oggetti&quot; digitali
+              facilmente utilizzabili dagli utenti nel rispetto dei requisiti e
+              degli obbiettivi di progetto.
             </motion.p>
           </motion.div>
         </motion.section>
