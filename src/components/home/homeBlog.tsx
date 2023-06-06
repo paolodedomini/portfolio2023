@@ -2,7 +2,9 @@
 import { useGetBlogPostsPreview } from "@/utils/data";
 import style from "./homeBlog.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 type Props = {};
+var slugify = require("slugify");
 
 function HomeBlog({}: Props) {
   const posts: any = useGetBlogPostsPreview(4);
@@ -12,6 +14,7 @@ function HomeBlog({}: Props) {
   return (
     <section className={style.homeBlog}>
       {posts.items?.map((post: any) => {
+        const slug = slugify(post.fields.title.it);
         return (
           <div className={style.boxCard} key={post.sys.id}>
             <div className={style.front}>
@@ -19,7 +22,11 @@ function HomeBlog({}: Props) {
             </div>
             <div className={style.back}>
               <Image src="/img/cardblog.webp" alt="" fill />
-              <h3>{post.fields.title.it}</h3>
+              <Link
+                href={{ pathname: `/blog/${slug}`, query: { id: post.sys.id } }}
+              >
+                <h3>{post.fields.title.it}</h3>
+              </Link>
             </div>
           </div>
         );
