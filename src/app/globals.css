@@ -12,6 +12,7 @@ html {
   padding: 0;
   font-size: 16px;
   overscroll-behavior: none;
+  width: 100%;
 }
 section {
   position: relative;

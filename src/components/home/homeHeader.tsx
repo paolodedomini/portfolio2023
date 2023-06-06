@@ -37,14 +37,15 @@ function HomeHeader({}: Props) {
     <div className={style.wrapperScroll}>
       <header className={style.mainHeader}>
         <Particle />
-        <Image
-          className={style.spinner}
-          src="/img/spinner.webp"
-          alt="Eberhard Grossgasteiger"
-          width={1200}
-          height={1200}
-          quality={100}
-        />
+        <div className={style.spinnerWrapper}>
+          <Image
+            className={style.spinner}
+            src="/img/spinner.webp"
+            alt="Eberhard Grossgasteiger"
+            fill={true}
+            quality={100}
+          />
+        </div>
         <Image
           className={style.headerImage}
           src="/img/eberhard-grossgasteiger.webp"

@@ -20,10 +20,12 @@ function HomeSecondSection({}: Props) {
         </div>
         <div className={style.right}>
           <h3 className={title.className}>Chiedi al Negromante</h3>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
-          totam. Earum molestias, porro, velit ex eos architecto placeat illum
-          debitis magni suscipit pariatur sapiente laudantium laboriosam. Optio
-          vitae nulla dolorem?
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
+            totam. Earum molestias, porro, velit ex eos architecto placeat illum
+            debitis magni suscipit pariatur sapiente laudantium laboriosam.
+            Optio vitae nulla dolorem?
+          </p>
         </div>
       </div>
     </section>

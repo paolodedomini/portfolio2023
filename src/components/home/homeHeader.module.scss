@@ -4,28 +4,53 @@
 .wrapperScroll {
   height: 3500px;
 }
+.spinnerWrapper {
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  top: 600px;
+  z-index: 200;
+  height: 1200px;
+}
 .spinner {
   position: absolute;
-  top: 30%;
-  left: 24%;
+  top: 10%;
+  left: 0;
+  right: 0;
+  height: auto !important;
+  width: 80% !important;
+  max-width: 1000px;
+  margin: auto;
   transform: translate(-50%, -50%);
   filter: brightness(500%);
   opacity: 0.2;
   transform-origin: 50% 50%;
   animation: circle infinite 50s linear;
+  @media screen and (max-width: 1024px) {
+    width: 50%;
+  }
 }
 .mainHeader {
   height: 2500px;
   position: sticky;
-  top: -150%;
+  top: -80%;
 }
 .firstHeadSection {
   display: flex;
-  margin-left: 24%;
+
   justify-content: center;
   position: sticky;
   top: 100px;
   margin-bottom: 550px;
+  @media screen and (max-width: 1024px) {
+    margin-left: 0;
+
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: 440px) {
+    top: 0;
+  }
 }
 .textLeft {
   grid-column: 5/8;
@@ -46,6 +71,9 @@
   position: relative;
   top: 60px;
   min-width: 350px;
+  @media screen and (max-width: 440px) {
+    display: none;
+  }
   .wrapperImmagini {
     display: flex;
     justify-content: center;
@@ -65,7 +93,18 @@
 .text {
   color: white;
   padding: 1rem;
-  width: 350px;
+  width: 310px;
+  @media screen and (max-width: 1024px) {
+    color: white;
+    padding: 1rem;
+    width: 350px;
+    background: #022b3fe8;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  @media screen and (max-width: 440px) {
+    background: transparent;
+  }
   h2 {
     font-size: 4rem;
     line-height: 0.9;
@@ -75,6 +114,9 @@
     font-size: 1rem;
     line-height: 1.7rem;
     max-width: 400px;
+    @media screen and (max-width: 1024px) {
+      opacity: 1 !important;
+    }
   }
 }
 
