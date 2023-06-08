@@ -28,7 +28,7 @@ function HomeSecondSection({}: Props) {
           <Image src="/img/chiave.webp" alt="" width={60} height={200} />
         </div>
         <div className={style.right}>
-          <h3 className={title.className}>Contatta il Negromante</h3>
+          <h3 className={title.className}>Contatti</h3>
           <div className={style.wrapperContatti}>
             <div className={style.contatto}>
               <a

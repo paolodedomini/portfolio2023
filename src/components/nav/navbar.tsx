@@ -24,7 +24,7 @@ function Navbar({}: Props) {
       }`}
     >
       <Link href="/">
-        <div className={style.logo}>PdD.com</div>
+        <div className={style.logo}>paolodedomini.com</div>
       </Link>
       {/*       <ul>
         <Link href="/blog">
