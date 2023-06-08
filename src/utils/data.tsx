@@ -60,10 +60,12 @@ async function getDataSinglePostAssets(id: string) {
 
 function richTextToHtml(document: any) {
   const d: {
-    nodeType: string;
+    nodeType: any;
+    data: any;
     content: any[];
   } = {
     nodeType: "document",
+    data: {},
     content: document.fields.body.content,
   };
 
