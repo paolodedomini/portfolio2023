@@ -53,7 +53,10 @@ function HomeHeader({}: Props) {
           fill={true}
           quality={100}
         />
-        <motion.section className={style.firstHeadSection}>
+        <motion.section
+          className={style.firstHeadSection}
+          style={{ filter: blur }}
+        >
           <motion.div
             className={style.wrapperEstetica}
             style={{ y: yWrapperEstetica }}
@@ -62,7 +65,7 @@ function HomeHeader({}: Props) {
               className={style.wrapperImmagini}
               style={{ filter: bright }}
             >
-              <motion.div style={{ position: "relative", filter: blur }}>
+              <motion.div style={{ position: "relative" }}>
                 <Image
                   className={style.occhio}
                   src="/img/occhio.webp"

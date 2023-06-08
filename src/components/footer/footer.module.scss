@@ -1,0 +1,45 @@
+.footer {
+  &.page {
+    background-color: #02293e;
+    margin-top: 3rem;
+    .innerWrapper {
+      color: white;
+      a {
+        color: white;
+      }
+    }
+    ul li a {
+      color: white;
+    }
+  }
+}
+.innerWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px 3rem 20px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  a {
+    color: black;
+  }
+
+  h3 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+  ul {
+    li {
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: normal;
+      }
+    }
+  }
+}

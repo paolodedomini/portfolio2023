@@ -1,0 +1,100 @@
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { createClient } from "contentful";
+
+const client = createClient({
+  space: "9srekbk2xi6w",
+  accessToken: "gqT7CdI5Vu-gas5mCm0G2As5iJZ3OkTQyf6mJMa3r2k",
+});
+
+// Retrieve the list of blog posts from Contentful
+const getBlogPosts = async (id: string) => {
+  const response = await client.getEntry(id);
+
+  return response;
+};
+async function getBlogDataPreview(number: number) {
+  const res = await fetch(
+    `https://api.contentful.com/spaces/9srekbk2xi6w/environments/master/entries?content_type=blog&access_token=CFPAT-GBM9LPJWAuK0r_taVGPiW8tESLjVicEtD0zhiboTPTA&limit=${
+      number ? number : 1
+    }`
+  );
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+async function getDataSinglePost(id: string) {
+  const res = await fetch(
+    `https://api.contentful.com/spaces/9srekbk2xi6w/environments/master/entries?content_type=blog&sys.id=${id}&access_token=CFPAT-GBM9LPJWAuK0r_taVGPiW8tESLjVicEtD0zhiboTPTA`
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+async function getDataSinglePostAssets(id: string) {
+  const res = await fetch(
+    `https://api.contentful.com/spaces/9srekbk2xi6w/environments/master/assets/${id}?access_token=CFPAT-GBM9LPJWAuK0r_taVGPiW8tESLjVicEtD0zhiboTPTA`
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    return null;
+  }
+
+  return res.json();
+}
+
+function richTextToHtml(document: any) {
+  const d: {
+    nodeType: string;
+    content: any[];
+  } = {
+    nodeType: "document",
+    content: document.fields.body.content,
+  };
+
+  const Bold = ({ children }: any) => <strong> {children} </strong>;
+
+  const Text = ({ children }: any) => (
+    <p className="align-center"> {children} </p>
+  );
+  console.log("document", document.fields.body.content[0].content[0]);
+
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: (text: any) => <Bold>{text} </Bold>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children} </Text>,
+      [BLOCKS.UL_LIST]: (node, children) => (
+        <ul className="blog-class">{children}</ul>
+      ),
+      [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+    },
+    renderText: (text: any) => text.replace("!", "?"),
+  };
+
+  return documentToReactComponents(d, options);
+}
+
+export {
+  getDataSinglePost,
+  getBlogDataPreview,
+  getDataSinglePostAssets,
+  richTextToHtml,
+  getBlogPosts,
+};

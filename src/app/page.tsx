@@ -9,6 +9,7 @@ export default function Home() {
     <main className={styles.main}>
       <HomeHeader />
       <HomeFirstSection />
+      {/* @ts-expect-error Server Component */}
       <HomeBlog />
       <HomeSecondSection />
     </main>

@@ -17,3 +17,8 @@ html {
 section {
   position: relative;
 }
+main.page {
+}
+.blog-class {
+  list-style: square;
+}

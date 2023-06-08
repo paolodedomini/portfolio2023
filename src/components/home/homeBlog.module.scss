@@ -1,3 +1,10 @@
+.blog {
+  margin: 4rem 0;
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
 .homeBlog {
   display: flex;
   flex-wrap: wrap;
@@ -8,6 +15,7 @@
     justify-content: center;
     gap: 20px;
   }
+
   .boxCard {
     width: 240px;
     height: 350px;
@@ -36,6 +44,9 @@
       backface-visibility: hidden;
       transition: all ease-in-out 0.7s;
       border-radius: 10px;
+      a {
+        color: white;
+      }
     }
     .front {
       background-color: #bbb;
