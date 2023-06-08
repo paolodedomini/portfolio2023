@@ -79,11 +79,13 @@ function richTextToHtml(document: any) {
       [MARKS.BOLD]: (text: any) => <Bold>{text} </Bold>,
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children} </Text>,
-      [BLOCKS.UL_LIST]: (node, children) => (
+      [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
+        <Text>{children} </Text>
+      ),
+      [BLOCKS.UL_LIST]: (node: any, children: any) => (
         <ul className="blog-class">{children}</ul>
       ),
-      [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+      [BLOCKS.LIST_ITEM]: (node: any, children: any) => <li>{children}</li>,
     },
     renderText: (text: any) => text.replace("!", "?"),
   };
