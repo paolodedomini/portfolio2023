@@ -175,7 +175,7 @@ function HomeFirstSection({}: Props) {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Image src="/img/200.webp" alt="200" fill />
+                  <Image unoptimized src="/img/200.webp" alt="200" fill />
                 </motion.div>
               )}
             </AnimatePresence>{" "}
