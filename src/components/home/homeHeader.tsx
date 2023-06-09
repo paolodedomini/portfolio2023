@@ -9,7 +9,7 @@ type Props = {};
 
 function HomeHeader({}: Props) {
   let { scrollY } = useScroll();
-  let y = useTransform(scrollY, [500, 1500], [270, 150]);
+  let y = useTransform(scrollY, [500, 800], [270, 150]);
   let opacityParagraph = useTransform(scrollY, [500, 700], [0, 1]);
   let bright = useTransform(scrollY, (v) => {
     if (v < 882) {
@@ -19,7 +19,7 @@ function HomeHeader({}: Props) {
 
   let blur = useTransform(scrollY, (v) => {
     if (v > 2000 && v < 3000) {
-      return `blur(${v / 150 - 13}px)`;
+      return `blur(${v / 130 - 13}px)`;
     } else if (v < 1600) {
       return `blur(${0}px)`;
     }

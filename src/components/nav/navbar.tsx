@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import style from "./navbar.module.scss";
-import { title } from "@/utils/fonts";
+import { title, main } from "@/utils/fonts";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 type Props = {};
@@ -24,14 +24,14 @@ function Navbar({}: Props) {
       }`}
     >
       <Link href="/">
-        <div className={style.logo}>paolodedomini.com</div>
+        <div className={`${style.logo} ${main.className}`}>PdD.com</div>
       </Link>
-      {/*       <ul>
-        <Link href="/blog">
+      <ul>
+        <Link href="#">
           {" "}
-          <li>Blog</li>
+          <li className={main.className}>Blog</li>
         </Link>
-      </ul> */}
+      </ul>
     </nav>
   );
 }

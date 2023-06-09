@@ -8,8 +8,6 @@ import {
   useTransform,
   useScroll,
   useInView,
-  useAnimate,
-  stagger,
   AnimatePresence,
 } from "framer-motion";
 
@@ -177,12 +175,7 @@ function HomeFirstSection({}: Props) {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Image
-                    src="/img/200.webp"
-                    alt="200"
-                    width={400}
-                    height={300}
-                  />
+                  <Image src="/img/200.webp" alt="200" fill />
                 </motion.div>
               )}
             </AnimatePresence>{" "}

@@ -1,6 +1,11 @@
 .headerImage {
   z-index: -1;
 }
+.right {
+  h3 {
+    text-align: center;
+  }
+}
 .content {
   display: flex;
   max-width: 800px;
@@ -9,7 +14,8 @@
   gap: 40px;
   padding: 16rem 0 16rem 0;
   color: white;
-  @media screen and (max-width: 440px) {
+  justify-content: center;
+  @media screen and (max-width: 550px) {
     flex-direction: column;
     padding: 16rem 20px;
   }
@@ -29,6 +35,7 @@
   align-items: center;
   padding: 2rem;
   background: #ffffff0d;
+  width: 340px;
   a {
     color: white;
   }
