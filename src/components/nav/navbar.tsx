@@ -27,9 +27,7 @@ function Navbar({}: Props) {
         <div className={`${style.logo} ${main.className}`}>PdD.com</div>
       </Link>
       <ul>
-        <li className={main.className}>
-          <Link href="#">Blog </Link>
-        </li>
+        <li className={main.className}>Blog</li>
       </ul>
     </nav>
   );
