@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { title } from "@/utils/fonts";
+
 type Props = {
   posts: any;
 };
@@ -28,6 +29,7 @@ function ListCardBlog({ posts }: Props) {
     initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0 },
   };
+
   return (
     <>
       <div ref={containerRef}>
@@ -54,7 +56,7 @@ function ListCardBlog({ posts }: Props) {
                     <Link
                       href={{
                         pathname: `/blog/${slug}`,
-                        query: { id: post.sys.id },
+                        search: `?id=${post.sys.id}`,
                       }}
                     >
                       <h3 className={title.className}>

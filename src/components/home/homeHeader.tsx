@@ -52,6 +52,7 @@ function HomeHeader({}: Props) {
           alt="Eberhard Grossgasteiger"
           fill={true}
           quality={100}
+          priority={true}
         />
         <motion.section
           className={style.firstHeadSection}

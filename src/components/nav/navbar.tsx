@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { use, useEffect } from "react";
 import style from "./navbar.module.scss";
 import { title, main } from "@/utils/fonts";
 import { usePathname } from "next/navigation";

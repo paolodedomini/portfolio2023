@@ -1,4 +1,5 @@
 import React from "react";
+import Share from "@/components/share/share";
 import {
   getDataSinglePost,
   getDataSinglePostAssets,
@@ -10,6 +11,13 @@ import style from "./page.module.scss";
 import { title } from "@/utils/fonts";
 
 import Link from "next/link";
+
+export const metadata = {
+  title: "Blog",
+  openGraph: {
+    title: "Blog",
+  },
+};
 
 type Props = {};
 
@@ -31,6 +39,7 @@ async function Page({ searchParams }: any) {
       </div>
       <div className={style.wrapperContent}>
         <h1 className={title.className}>{post.items[0].fields.title.it}</h1>
+        <Share />
         {post.items[0].fields.externalLink && (
           <div className={style.externalLInk}>
             <Link href={post.items[0].fields.externalLink.it}>
