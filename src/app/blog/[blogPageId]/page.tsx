@@ -30,7 +30,8 @@ async function Page({ searchParams }: any) {
 
   return (
     <main className="page">
-      <div className={style.wrapperImage}>
+      suca
+      {/*    <div className={style.wrapperImage}>
         {asset ? (
           <Image src={`https:${asset.fields.file.it.url}`} alt="" fill />
         ) : (
@@ -48,7 +49,7 @@ async function Page({ searchParams }: any) {
           </div>
         )}
         {single && richTextToHtml(single)}
-      </div>
+      </div> */}
     </main>
   );
 }
