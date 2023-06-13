@@ -13,6 +13,7 @@ const getBlogPosts = async () => {
 
   return response;
 };
+
 async function getBlogPostAssets(id: string) {
   const response = await client
     .getAsset(id)
@@ -26,16 +27,11 @@ async function getBlogPostAssets(id: string) {
 }
 
 async function getBlogDataPreview(number: number) {
-  const res = await fetch(
-    `https://api.contentful.com/spaces/9srekbk2xi6w/environments/master/entries?content_type=blog&access_token=CFPAT-GBM9LPJWAuK0r_taVGPiW8tESLjVicEtD0zhiboTPTA&limit=${
-      number ? number : 1
-    }`
-  );
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
+  const response: any = await client.getEntries({
+    limit: number || 1,
+  });
+
+  return response;
 }
 
 async function getDataSinglePost(id: string) {

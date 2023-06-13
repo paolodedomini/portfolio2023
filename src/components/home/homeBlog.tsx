@@ -7,6 +7,7 @@ type Props = {};
 
 async function HomeBlog({}: Props) {
   const posts: any = await getBlogDataPreview(3);
+  console.log("posts", posts);
 
   return (
     <>

@@ -39,8 +39,6 @@ function ListCardBlog({ posts }: Props) {
             variants={containerVariants}
           >
             {posts.items?.map((post: any, index: number) => {
-              console.log("slugfield", post);
-
               return (
                 <motion.div
                   variants={childVariants}
@@ -52,8 +50,9 @@ function ListCardBlog({ posts }: Props) {
                   </div>
                   <div className={style.back}>
                     <Image src="/img/cardblog.webp" alt="" fill />
-
-                    <h3 className={title.className}>{post.fields.title.it}</h3>
+                    <Link href={`/blog/${post.fields.slug}`}>
+                      <h3 className={title.className}>{post.fields.title}</h3>
+                    </Link>
                   </div>
                 </motion.div>
               );
