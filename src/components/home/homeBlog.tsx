@@ -14,7 +14,7 @@ async function HomeBlog({}: Props) {
       {posts ? (
         <section className={style.blog}>
           <h2 className={title.className}>Articoli dal Blog</h2>
-          <ListCardBlog posts={posts} />
+          {/*  <ListCardBlog posts={posts} /> */}
         </section>
       ) : (
         "Loading..."
