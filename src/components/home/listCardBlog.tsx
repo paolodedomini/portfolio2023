@@ -10,8 +10,6 @@ type Props = {
   posts: any;
 };
 
-const slugify = require("slugify");
-
 function ListCardBlog({ posts }: Props) {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true });
@@ -41,7 +39,8 @@ function ListCardBlog({ posts }: Props) {
             variants={containerVariants}
           >
             {posts.items?.map((post: any, index: number) => {
-              const slug = slugify(post.fields.title.it);
+              console.log("slugfield", post.fields.slug.it);
+
               return (
                 <motion.div
                   variants={childVariants}
@@ -55,8 +54,7 @@ function ListCardBlog({ posts }: Props) {
                     <Image src="/img/cardblog.webp" alt="" fill />
                     <Link
                       href={{
-                        pathname: `/blog/${slug}`,
-                        search: `?id=${post.sys.id}`,
+                        pathname: `/blog/${post.fields.slug.it}`,
                       }}
                     >
                       <h3 className={title.className}>

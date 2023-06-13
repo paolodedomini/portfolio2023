@@ -5,6 +5,7 @@ import {
   getDataSinglePostAssets,
   richTextToHtml,
   getBlogPosts,
+  getBlogPostAssets,
 } from "@/utils/data";
 import Image from "next/image";
 import style from "./page.module.scss";
@@ -21,12 +22,17 @@ export const metadata = {
 
 type Props = {};
 
-async function Page({ searchParams }: any) {
-  const post: any = await getDataSinglePost(searchParams.id);
-  const asset: any = await getDataSinglePostAssets(
-    post.items[0].fields.featuredImage?.it.sys.id
-  );
-  const single = await getBlogPosts(searchParams.id);
+async function Page({ params }: any) {
+  const posts = await getBlogPosts();
+  if (!posts) return null;
+  const post = posts.items.find((item: any) => {
+    return item.fields.slug === params.blogPageId;
+  });
+  if (!post) return null;
+  const asset: any =
+    post.fields.featuredImage &&
+    (await getDataSinglePostAssets(post.fields.featuredImage.sys.id));
+  console.log("single", posts);
 
   return (
     <main className="page">
@@ -38,16 +44,14 @@ async function Page({ searchParams }: any) {
         )}
       </div>
       <div className={style.wrapperContent}>
-        <h1 className={title.className}>{post.items[0].fields.title.it}</h1>
+        <h1 className={title.className}>{post.fields.title}</h1>
         <Share />
-        {post.items[0].fields.externalLink && (
+        {post.fields.externalLink && (
           <div className={style.externalLInk}>
-            <Link href={post.items[0].fields.externalLink.it}>
-              Articolo Originale
-            </Link>
+            <Link href={post.fields.externalLink}>Articolo Originale</Link>
           </div>
         )}
-        {single && richTextToHtml(single)}
+        {post && richTextToHtml(post)}
       </div>
     </main>
   );

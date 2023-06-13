@@ -8,11 +8,23 @@ const client = createClient({
 });
 
 // Retrieve the list of blog posts from Contentful
-const getBlogPosts = async (id: string) => {
-  const response = await client.getEntry(id);
+const getBlogPosts = async () => {
+  const response: any = await client.getEntries();
 
   return response;
 };
+async function getBlogPostAssets(id: string) {
+  const response = await client
+    .getAsset(id)
+    .then((asset) => {
+      return asset;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  return response;
+}
+
 async function getBlogDataPreview(number: number) {
   const res = await fetch(
     `https://api.contentful.com/spaces/9srekbk2xi6w/environments/master/entries?content_type=blog&access_token=CFPAT-GBM9LPJWAuK0r_taVGPiW8tESLjVicEtD0zhiboTPTA&limit=${
@@ -52,7 +64,7 @@ async function getDataSinglePostAssets(id: string) {
   // Recommendation: handle errors
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    return null;
+    return "non chiappo i dati";
   }
 
   return res.json();
@@ -101,4 +113,5 @@ export {
   getDataSinglePostAssets,
   richTextToHtml,
   getBlogPosts,
+  getBlogPostAssets,
 };
