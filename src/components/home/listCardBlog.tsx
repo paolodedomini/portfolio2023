@@ -39,7 +39,7 @@ function ListCardBlog({ posts }: Props) {
             variants={containerVariants}
           >
             {posts.items?.map((post: any, index: number) => {
-              // console.log("slugfield", post.fields.slug.it);
+              console.log("slugfield", post);
 
               return (
                 <motion.div
