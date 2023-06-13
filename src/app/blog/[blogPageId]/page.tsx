@@ -37,11 +37,11 @@ async function Page({ params }: any) {
   return (
     <main className="page">
       <div className={style.wrapperImage}>
-        {/*       {asset ? (
+        {asset ? (
           <Image src={`https:${asset.fields.file.it.url}`} alt="" fill />
         ) : (
           <Image src="/img/backGeneralPage.webp" quality={100} alt="" fill />
-        )} */}
+        )}
       </div>
       <div className={style.wrapperContent}>
         <h1 className={title.className}>{post.fields.title}</h1>
