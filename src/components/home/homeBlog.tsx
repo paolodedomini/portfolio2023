@@ -9,10 +9,17 @@ async function HomeBlog({}: Props) {
   const posts: any = await getBlogDataPreview(3);
 
   return (
-    <section className={style.blog}>
-      <h2 className={title.className}>Articoli dal Blog</h2>
-      <ListCardBlog posts={posts} />
-    </section>
+    <>
+      {" "}
+      {posts ? (
+        <section className={style.blog}>
+          <h2 className={title.className}>Articoli dal Blog</h2>
+          <ListCardBlog posts={posts} />
+        </section>
+      ) : (
+        "Loading..."
+      )}
+    </>
   );
 }
 
