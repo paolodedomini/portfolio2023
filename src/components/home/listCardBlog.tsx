@@ -52,11 +52,8 @@ function ListCardBlog({ posts }: Props) {
                   </div>
                   <div className={style.back}>
                     <Image src="/img/cardblog.webp" alt="" fill />
-                    <Link href={`/blog/${post.fields.slug.it}`}>
-                      <h3 className={title.className}>
-                        {post.fields.title.it}
-                      </h3>
-                    </Link>
+
+                    <h3 className={title.className}>{post.fields.title.it}</h3>
                   </div>
                 </motion.div>
               );
