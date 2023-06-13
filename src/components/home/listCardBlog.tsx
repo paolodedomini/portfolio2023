@@ -47,21 +47,19 @@ function ListCardBlog({ posts }: Props) {
                   className={style.boxCard}
                   key={index}
                 >
-                         <div className={style.front}>
+                  <div className={style.front}>
                     <Image src="/img/cardblog.webp" alt="" fill />
                   </div>
-                {/*   <div className={style.back}>
-                    <Image src="/img/cardblog.webp" alt="" fill />
+                  <div className={style.back}>
+                    {/*   <Image src="/img/cardblog.webp" alt="" fill />
                                    <Link
                       href={{
                         pathname: `/blog/${post.fields.slug.it}`,
                       }}
                     > */}
-                      <h3 className={title.className}>
-                        {post.fields.title.it}
-                      </h3>
-                    </Link> 
-                  </div> 
+                    <h3 className={title.className}>{post.fields.title.it}</h3>
+                    {/*  </Link>  */}
+                  </div>
                 </motion.div>
               );
             })}
