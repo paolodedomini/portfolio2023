@@ -1,11 +1,9 @@
 import React from "react";
 import Share from "@/components/share/share";
 import {
-  getDataSinglePost,
   getDataSinglePostAssets,
   richTextToHtml,
   getBlogPosts,
-  getBlogPostAssets,
 } from "@/utils/data";
 import Image from "next/image";
 import style from "./page.module.scss";
@@ -32,6 +30,7 @@ async function Page({ params }: any) {
   const asset: any =
     post.fields.featuredImage &&
     (await getDataSinglePostAssets(post.fields.featuredImage.sys.id));
+
   console.log("single", posts);
 
   return (
