@@ -52,7 +52,7 @@ function ListCardBlog({ posts }: Props) {
                   </div>
                   <div className={style.back}>
                     <Image src="/img/cardblog.webp" alt="" fill />
-                    <Link
+                    {/*                <Link
                       href={{
                         pathname: `/blog/${post.fields.slug.it}`,
                       }}
@@ -60,7 +60,7 @@ function ListCardBlog({ posts }: Props) {
                       <h3 className={title.className}>
                         {post.fields.title.it}
                       </h3>
-                    </Link>
+                    </Link> */}
                   </div>
                 </motion.div>
               );
