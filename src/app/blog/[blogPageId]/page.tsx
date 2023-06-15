@@ -1,5 +1,5 @@
 import React from "react";
-
+import Share from "@/components/share/share";
 import {
   getDataSinglePostAssets,
   richTextToHtml,
@@ -45,7 +45,7 @@ async function Page({ params }: any) {
       </div>
       <div className={style.wrapperContent}>
         <h1 className={title.className}>{post.fields.title}</h1>
-
+        <Share />
         {post.fields.externalLink && (
           <div className={style.externalLInk}>
             <Link href={post.fields.externalLink}>Articolo Originale</Link>

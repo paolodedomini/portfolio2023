@@ -8,11 +8,14 @@
   }
 }
 .wrapperContent {
+  a {
+    color: black;
+  }
   max-width: 800px;
   margin: 0 auto;
   position: relative;
   h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
   }
