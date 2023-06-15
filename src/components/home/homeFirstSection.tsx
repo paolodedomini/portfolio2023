@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import style from "./homeFirstSection.module.scss";
 import { title } from "@/utils/fonts";
 import Image from "next/image";

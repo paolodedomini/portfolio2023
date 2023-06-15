@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import style from "./homeHeader.module.scss";
 import { title } from "@/utils/fonts";
