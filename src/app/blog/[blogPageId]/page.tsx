@@ -26,7 +26,8 @@ async function Page({ params }: any) {
   const post = posts.items.find((item: any) => {
     return item.fields.slug === params.blogPageId;
   });
-  if (!post) return null;
+
+  if (!post) return <h1>no post</h1>;
   const asset: any =
     post.fields.featuredImage &&
     (await getDataSinglePostAssets(post.fields.featuredImage.sys.id));
