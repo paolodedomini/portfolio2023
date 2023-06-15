@@ -32,8 +32,6 @@ async function Page({ params }: any) {
     post.fields.featuredImage &&
     (await getDataSinglePostAssets(post.fields.featuredImage.sys.id));
 
-  console.log("single", posts);
-
   return (
     <main className="page">
       <div className={style.wrapperImage}>

@@ -27,8 +27,6 @@ function Sidebar({ open, setOpen }: Props) {
     posts();
   }, [pathname]);
 
-  console.log("posts", posts.items);
-
   if (!posts) {
     return <div>Loading...</div>;
   }

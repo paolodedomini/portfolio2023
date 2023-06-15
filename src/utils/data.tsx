@@ -82,7 +82,6 @@ function richTextToHtml(document: any) {
   const Text = ({ children }: any) => (
     <p className="align-center"> {children} </p>
   );
-  console.log("document", document.fields.body.content[0].content[0]);
 
   const options = {
     renderMark: {

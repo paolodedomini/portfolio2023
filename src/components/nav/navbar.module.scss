@@ -25,12 +25,7 @@
     li {
       border: 1px solid;
       padding: 0.5rem 1rem;
-      a {
-        color: white;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+      cursor: pointer;
     }
   }
 }

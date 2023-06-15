@@ -7,7 +7,6 @@ import { BsFacebook, BsTelegram, BsLinkedin } from "react-icons/bs";
 export default function App() {
   const [openWindow, setOpenWindow] = useState(""); // false
   const pagePath = usePathname();
-  console.log("pagePath", pagePath);
 
   const socialShare = [
     {
