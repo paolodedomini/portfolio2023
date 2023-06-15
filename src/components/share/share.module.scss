@@ -1,0 +1,25 @@
+.button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 10px;
+  font-weight: bold;
+  line-height: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.shareContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.title {
+  line-height: 0;
+  margin-right: 0.5rem;
+}
