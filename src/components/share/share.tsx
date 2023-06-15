@@ -26,7 +26,7 @@ export default function App() {
   ];
 
   return (
-    <>
+    <div style={{ marginBottom: "2rem" }}>
       <div className={style.shareContainer}>
         <div className={style.title}>Share on</div>
 
@@ -79,6 +79,6 @@ export default function App() {
       )} */}
       </div>
       <hr />
-    </>
+    </div>
   );
 }

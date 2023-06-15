@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import style from "./footer.module.scss";
 
 import Link from "next/link";
-import { getBlogDataPreview } from "@/utils/data";
+import { getBlogPosts } from "@/utils/data";
 
 type Props = {};
 
@@ -12,13 +12,9 @@ function Footer({}: Props) {
   const [data, setData] = React.useState<any>([]);
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://api.contentful.com/spaces/9srekbk2xi6w/environments/master/entries?content_type=blog&access_token=CFPAT-GBM9LPJWAuK0r_taVGPiW8tESLjVicEtD0zhiboTPTA&limit=${3}`
-        ).then((res) => res.json());
-        setData(response);
-      } catch (error) {
-        console.log("Error fetching data from Contentful:", error);
+      const data = await getBlogPosts();
+      if (data) {
+        setData(data);
       }
     };
 
@@ -49,21 +45,21 @@ function Footer({}: Props) {
           <h3>Ultime dal Blog</h3>
           <ul>
             {data.items?.map((post: any) => {
-              const slug = slugify(post.fields.title.it);
               return (
                 <li key={post.sys.id}>
-                  <Link
-                    href={{
-                      pathname: `/blog/${slug}`,
-                      query: { id: post.sys.id },
-                    }}
-                  >
-                    <h3>{post.fields.title.it}</h3>
+                  <Link href={`/blog/${post.fields.slug}`}>
+                    <h3>{post.fields.title}</h3>
                   </Link>
                 </li>
               );
             })}
           </ul>
+          <div className={style.credits}>
+            made with <span>❤</span> and{" "}
+            <Link href="https://nextjs.org/" target="_blank">
+              NEXT.js
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
