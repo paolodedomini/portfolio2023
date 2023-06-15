@@ -3,7 +3,9 @@ const nextConfig = {
   images: {
     domains: ["images.ctfassets.net"],
   },
-  appDir: true,
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = nextConfig;
