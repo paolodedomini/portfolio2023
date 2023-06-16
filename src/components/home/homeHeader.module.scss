@@ -11,6 +11,9 @@
   top: 760px;
   z-index: 200;
   height: 1200px;
+  @media screen and (max-width: 440px) {
+    top: 500px;
+  }
 }
 .bigText {
   color: #ffffff14;
@@ -18,6 +21,11 @@
   font-weight: bold;
   text-align: center;
   letter-spacing: -6px;
+  @media screen and (max-width: 440px) {
+    overflow-wrap: break-word;
+    line-height: 0.6;
+    font-size: 13rem;
+  }
 }
 .spinner {
   position: absolute;
