@@ -24,7 +24,7 @@ function HomeHeader({}: Props) {
       return `blur(${0}px)`;
     }
   });
-  let bigTextAnimation = useTransform(scrollY, [500, 800], [700, 350]);
+  let bigTextAnimation = useTransform(scrollY, [1200, 1600], [1200, 350]);
   let rotateMano = useTransform(scrollY, [0, 800], [0, 180]);
   let yMano = useTransform(scrollY, [0, 800], [0, 350]);
   let yWrapperEstetica = useTransform(scrollY, [0, 800], [200, 0]);
