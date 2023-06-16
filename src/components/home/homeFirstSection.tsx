@@ -165,7 +165,7 @@ function HomeFirstSection({}: Props) {
             onMouseOver={() => setModal(true)}
             onMouseLeave={() => setModal(false)}
           >
-            <strong>Quindi, no!</strong> <br />
+            <div className={style.no}>Quindi, no!</div> <br />
             <AnimatePresence>
               {modal && (
                 <motion.div
@@ -206,11 +206,13 @@ function HomeFirstSection({}: Props) {
                   in tutto ciò che riguarda il mondo del web. <br />
                   La comunicazione/progettazione visiva è quello che mi
                   appassiona di più del mio lavoro.
-                  <br /> Utilizzo software adobe: Photoshop e illustrator
-                  principalmente.
+                  <br /> Utilizzo software adobe: <strong>
+                    Photoshop
+                  </strong> e <strong>illustrator</strong> principalmente.
                   <br />
-                  Da anni lavoro quotidianamente con la suite Affinity: Designer
-                  e Photo. Per la prototipia: Figma e Invision
+                  Da anni lavoro quotidianamente con la suite Affinity:{" "}
+                  <strong>Designer e Photo</strong>. Per la prototipia:{" "}
+                  <strong>Figma e Invision</strong>
                 </p>
               </div>
             </div>

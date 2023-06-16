@@ -57,9 +57,10 @@
     }
   }
   .content {
-    strong {
+    .no {
       text-decoration: underline;
       font-size: 2rem;
+      font-weight: bold;
     }
     p {
       line-height: 1.8;

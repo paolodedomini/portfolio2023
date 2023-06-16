@@ -24,7 +24,7 @@ function HomeHeader({}: Props) {
       return `blur(${0}px)`;
     }
   });
-
+  let bigTextAnimation = useTransform(scrollY, [500, 800], [700, 350]);
   let rotateMano = useTransform(scrollY, [0, 800], [0, 180]);
   let yMano = useTransform(scrollY, [0, 800], [0, 350]);
   let yWrapperEstetica = useTransform(scrollY, [0, 800], [200, 0]);
@@ -45,6 +45,9 @@ function HomeHeader({}: Props) {
             fill={true}
             quality={100}
           />
+          <motion.div style={{ y: bigTextAnimation }} className={style.bigText}>
+            Abracadabra
+          </motion.div>
         </div>
         <Image
           className={style.headerImage}
@@ -55,6 +58,8 @@ function HomeHeader({}: Props) {
           priority={true}
         />
         <motion.section
+          initial={{ opacity: 0, filter: "blur(10px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
           className={style.firstHeadSection}
           style={{ filter: blur }}
         >

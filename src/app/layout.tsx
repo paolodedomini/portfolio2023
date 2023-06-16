@@ -2,12 +2,20 @@ import "./globals.css";
 import { main } from "../utils/fonts";
 import Navbar from "@/components/nav/navbar";
 import Footer from "@/components/footer/footer";
+
 export const metadata = {
   title: "PdD.com",
   description: "Paolo de Domini personal website",
   openGraph: {
     title: "PdD.com",
     description: "Paolo de Domini personal website",
+  },
+  icons: {
+    icon: {
+      url: "/mainlogo.png",
+      type: "image/png",
+    },
+    shortcut: { url: "/mainlogo.png", type: "image/png" },
   },
 };
 
