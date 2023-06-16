@@ -10,27 +10,41 @@ import style from "./page.module.scss";
 import { title } from "@/utils/fonts";
 
 import Link from "next/link";
-
-export const metadata = {
-  title: "Blog",
-  openGraph: {
-    title: "Blog",
-  },
-};
-
 type Props = {};
 
-async function Page({ params }: any) {
+async function getData(params: any) {
   const posts = await getBlogPosts();
   if (!posts) return null;
-  const post = posts.items.find((item: any) => {
+  const post: any = posts.items.find((item: any) => {
     return item.fields.slug === params.blogPageId;
   });
-
-  if (!post) return <h1>no post</h1>;
   const asset: any =
     post.fields.featuredImage &&
     (await getDataSinglePostAssets(post.fields.featuredImage.sys.id));
+  return { post, asset };
+}
+
+export async function generateMetadata({ params }: any) {
+  const data = await getData(params);
+  if (!data) return null;
+  const { post, asset } = data;
+  return {
+    title: `paolodedomini-Blog ${post.fields.title}`,
+    openGraph: {
+      title: post.fields.title,
+      images: [
+        asset
+          ? `https:${asset.fields.file.it.url}`
+          : "/img/backGeneralPage.webp",
+      ],
+    },
+  };
+}
+
+async function Page({ params }: any) {
+  const data = await getData(params);
+  if (!data) return <h1>no data</h1>;
+  const { post, asset } = data;
 
   return (
     <main className="page">

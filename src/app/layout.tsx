@@ -9,6 +9,7 @@ export const metadata = {
   openGraph: {
     title: "PdD.com",
     description: "Paolo de Domini personal website",
+    images: ["/img/backGeneralPage.webp"],
   },
   icons: {
     icon: {

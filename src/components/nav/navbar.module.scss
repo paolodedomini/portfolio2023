@@ -21,7 +21,9 @@
   ul {
     font-size: 1.5rem;
     margin-right: 3rem;
-
+    @media scree and (max-width: 1024px) {
+      margin-right: 0;
+    }
     li {
       border: 1px solid;
       padding: 0.5rem 1rem;
