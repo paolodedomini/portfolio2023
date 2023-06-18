@@ -32,12 +32,7 @@ function ListCardBlog({ posts }: Props) {
     <>
       <div ref={containerRef}>
         {isInView && (
-          <motion.div
-            className={style.homeBlog}
-            initial="initial"
-            animate="animate"
-            variants={containerVariants}
-          >
+          <motion.div className={style.homeBlog}>
             {posts.items?.map((post: any, index: number) => {
               return (
                 <motion.div
