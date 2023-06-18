@@ -8,7 +8,7 @@ type Props = {};
 
 function HomeSecondSection({}: Props) {
   return (
-    <section>
+    <section className={style.contatti}>
       <Image
         className={style.headerImage}
         src="/img/back3.webp"

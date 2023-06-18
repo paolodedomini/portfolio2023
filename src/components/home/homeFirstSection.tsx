@@ -27,7 +27,7 @@ function HomeFirstSection({}: Props) {
   const backElementStars = useTransform(scrollY, [3000, 3500], [1000, 600]);
   const [modal, setModal] = useState(false);
   return (
-    <div style={{ position: "relative", overflow: "hidden" }}>
+    <div style={{ position: "relative", overflow: "hidden", zIndex: 1000 }}>
       <motion.div
         className={style.backWrapperImage}
         style={{ position: "absolute", y: backElement }}

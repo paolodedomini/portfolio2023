@@ -6,6 +6,11 @@
     text-align: center;
   }
 }
+.contatti {
+  //hack per quella megamerda di safari che non gestisce le rotazioni 3d. Senza parole
+  position: relative;
+  z-index: 1000;
+}
 .content {
   display: flex;
   max-width: 800px;
