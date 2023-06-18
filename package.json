@@ -30,7 +30,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.36.1",
+    "@netlify/plugin-nextjs": "^4.38.0",
     "@next/bundle-analyzer": "^13.4.5",
     "cross-env": "^7.0.3",
     "slugify": "^1.6.6"
