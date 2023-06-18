@@ -36,7 +36,7 @@ function HomeHeader({}: Props) {
   return (
     <div className={style.wrapperScroll}>
       <header className={style.mainHeader}>
-        {/*  <Particle /> */}
+        <Particle />
         <div className={style.spinnerWrapper}>
           <Image
             className={style.spinner}
