@@ -21,11 +21,11 @@ const Particle = () => {
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
-        fpsLimit: 60,
+        fpsLimit: 30,
         style: {
-          position: "absolute",
-          bottom: "0",
-          height: "100%",
+          position: "fixed",
+          top: "0",
+          height: "100vh",
         },
         fullScreen: {
           enable: false,
@@ -43,7 +43,7 @@ const Particle = () => {
             value: "#ffffff",
             animation: {
               enable: true,
-              speed: 20,
+              speed: 5,
               sync: true,
             },
           },
@@ -68,7 +68,7 @@ const Particle = () => {
             },
           },
           size: {
-            value: 64,
+            value: 32,
             random: { enable: true, minimumValue: 32 },
             animation: {
               enable: false,
@@ -86,9 +86,9 @@ const Particle = () => {
           },
           life: {
             duration: {
-              value: 6,
+              value: 10,
             },
-            count: 2,
+            count: 1,
           },
           move: {
             enable: true,
@@ -96,7 +96,7 @@ const Particle = () => {
               enable: true,
               acceleration: -1,
             },
-            speed: 10,
+            speed: 5,
             direction: "top",
             random: false,
             straight: false,
@@ -105,7 +105,7 @@ const Particle = () => {
               bottom: "out",
             },
             attract: {
-              enable: true,
+              enable: false,
               distance: 300,
               rotate: {
                 x: 600,
