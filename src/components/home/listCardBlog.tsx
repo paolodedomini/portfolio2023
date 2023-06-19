@@ -3,8 +3,9 @@ import React, { useRef } from "react";
 import style from "./homeBlog.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { title } from "@/utils/fonts";
+import { log } from "console";
 
 type Props = {
   posts: any;
@@ -27,12 +28,18 @@ function ListCardBlog({ posts }: Props) {
     initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0 },
   };
+  console.log(isInView, "isInView");
 
   return (
     <>
       <div ref={containerRef}>
         {isInView && (
-          <motion.div className={style.homeBlog}>
+          <motion.div
+            className={style.homeBlog}
+            variants={containerVariants}
+            initial="initial"
+            animate="animate"
+          >
             {posts.items?.map((post: any, index: number) => {
               return (
                 <motion.div

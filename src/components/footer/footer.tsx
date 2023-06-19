@@ -44,7 +44,10 @@ function Footer({}: Props) {
         <div className={style.right}>
           <h3>Ultime dal Blog</h3>
           <ul>
-            {data.items?.map((post: any) => {
+            {data.items?.map((post: any, index: number) => {
+              if (index >= 3) {
+                return;
+              }
               return (
                 <li key={post.sys.id}>
                   <Link href={`/blog/${post.fields.slug}`}>
