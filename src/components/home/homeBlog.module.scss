@@ -25,6 +25,7 @@
     align-items: center;
     transition: all ease-in-out 0.7s;
     z-index: 1;
+    opacity: 0;
     &:hover {
       .front {
         transform: rotateY(180deg);

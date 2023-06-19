@@ -15,7 +15,7 @@ function ListCardBlog({ posts }: Props) {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true });
   const containerVariants = {
-    initial: { opacity: 0 },
+    initial: { opacity: 1 },
     animate: {
       opacity: 1,
       transition: {
@@ -25,8 +25,8 @@ function ListCardBlog({ posts }: Props) {
   };
 
   const childVariants = {
-    initial: { opacity: 0, y: 50 },
-    animate: { opacity: 1, y: 0 },
+    initial: { opacity: 0, top: 50 },
+    animate: { opacity: 1, top: 0 },
   };
   console.log(isInView, "isInView");
 
