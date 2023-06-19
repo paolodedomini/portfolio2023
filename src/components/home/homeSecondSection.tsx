@@ -3,7 +3,7 @@ import Image from "next/image";
 import style from "./homeSecondSection.module.scss";
 import { title } from "@/utils/fonts";
 import { BsLinkedin, BsMailbox2 } from "react-icons/bs";
-
+import { FaHatWizard } from "react-icons/fa";
 type Props = {};
 
 function HomeSecondSection({}: Props) {
@@ -49,6 +49,13 @@ function HomeSecondSection({}: Props) {
           <Image src="/img/chiave.webp" alt="" width={60} height={200} />
         </div>
       </div>
+      <section className={`${style.doc} ${title.className}`}>
+        <a href="/img/resume.pdf">Resume</a>
+        <div className={style.wizhat}>
+          <FaHatWizard />
+        </div>
+        <a href="/img/portfolioMonema.pdf">Portfolio </a>
+      </section>
     </section>
   );
 }

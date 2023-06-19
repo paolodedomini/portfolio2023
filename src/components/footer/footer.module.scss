@@ -1,4 +1,7 @@
 .footer {
+  a {
+    display: block;
+  }
   &.page {
     background-color: #02293e;
     margin-top: 3rem;
@@ -21,7 +24,7 @@
   gap: 40px;
   justify-content: space-between;
   color: black;
-  position:relative;
+  position: relative;
   @media screen and (max-width: 440px) {
     flex-direction: column;
     gap: 20px;
@@ -51,8 +54,12 @@
   }
 }
 .credits {
-  padding: 10px;
+  padding: 10px 10px 10px 0px;
   border: 1px solid white;
   text-align: center;
-  margin-top: 2rem;
+
+  text-align: left;
+  a {
+    display: inline;
+  }
 }

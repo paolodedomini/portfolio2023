@@ -71,11 +71,6 @@ export default function App() {
             }}
           />
         )}
-        {/* {openWindow && (
-        <div className="ratio ratio-16x9">
-          <iframe src={openWindow} title="YouTube video" allowFullscreen />
-        </div>
-      )} */}
       </div>
       <hr />
     </div>

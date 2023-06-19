@@ -39,7 +39,10 @@ function Footer({}: Props) {
           <p>Firenze</p>
           <p>tel: 3205546397</p>
           <p>mail: paolodedomini@gmail.com</p>
+
           <a href="/img/resume.pdf">Resume</a>
+
+          <a href="/img/portfolioMonema.pdf">Portfolio </a>
         </div>
         <div className={style.right}>
           <h3>Ultime dal Blog</h3>

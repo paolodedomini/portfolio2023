@@ -6,6 +6,33 @@
     text-align: center;
   }
 }
+.doc {
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 18rem;
+  flex-wrap: wrap;
+  @media screen and (max-width: 440px) {
+    padding-bottom: 30rem;
+  }
+  .wizhat {
+    color: white;
+    height: 91px;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+  }
+  a {
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    margin: 1rem;
+    border: 1px solid white;
+    display: block;
+  }
+}
 .contatti {
   //hack per quella megamerda di safari che non gestisce le rotazioni 3d. Senza parole
   position: relative;
@@ -17,7 +44,7 @@
   align-items: center;
   margin: 0 auto;
   gap: 40px;
-  padding: 16rem 0 16rem 0;
+  padding: 16rem 0 8rem 0;
   color: white;
   justify-content: center;
   @media screen and (max-width: 550px) {
