@@ -50,11 +50,11 @@ function HomeSecondSection({}: Props) {
         </div>
       </div>
       <section className={`${style.doc} ${title.className}`}>
-        <a href="/img/resume.pdf">Resume</a>
+        <a href="/data/resume.pdf">Resume</a>
         <div className={style.wizhat}>
           <FaHatWizard />
         </div>
-        <a href="/img/portfolioMonema.pdf">Portfolio </a>
+        <a href="/data/portfolioMonema.pdf">Portfolio </a>
       </section>
     </section>
   );

@@ -20,7 +20,7 @@ function Footer({}: Props) {
 
     fetchData();
   }, []);
-  const slugify = require("slugify");
+
   const pathname = usePathname();
   console.log("data", data);
   function isHome() {
@@ -40,9 +40,9 @@ function Footer({}: Props) {
           <p>tel: 3205546397</p>
           <p>mail: paolodedomini@gmail.com</p>
 
-          <a href="/img/resume.pdf">Resume</a>
+          <a href="/data/resume.pdf">Resume</a>
 
-          <a href="/img/portfolioMonema.pdf">Portfolio </a>
+          <a href="/data/portfolioMonema.pdf">Portfolio </a>
         </div>
         <div className={style.right}>
           <h3>Ultime dal Blog</h3>

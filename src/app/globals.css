@@ -17,8 +17,7 @@ html {
 section {
   position: relative;
 }
-main.page {
-}
+
 .blog-class {
   list-style: square;
 }
@@ -26,4 +25,9 @@ div#tsparticles {
   @media screen and (max-width: 440px) {
     opacity: 0.2;
   }
+}
+
+.errorPage {
+  max-width: 1200px;
+  margin: 0 auto;
 }

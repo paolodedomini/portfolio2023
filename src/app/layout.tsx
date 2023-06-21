@@ -2,12 +2,6 @@ import "./globals.css";
 import { main } from "../utils/fonts";
 import Navbar from "@/components/nav/navbar";
 import Footer from "@/components/footer/footer";
-import PiwikPro from "@piwikpro/react-piwik-pro";
-
-PiwikPro.initialize(
-  "3023a210-25e2-467f-89ca-f02f27bb9f7f",
-  "https://paolodedomini.containers.piwik.pro"
-);
 
 export const metadata = {
   title: "PdD.com",

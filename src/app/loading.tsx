@@ -14,7 +14,7 @@ function Loading({}: Props) {
         alignItems: "center",
       }}
     >
-      <h1>Loading...</h1>
+      <h1 style={{ color: "black" }}>Loading...</h1>
     </main>
   );
 }

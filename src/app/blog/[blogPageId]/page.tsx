@@ -19,7 +19,7 @@ async function getData(params: any) {
     return item.fields.slug === params.blogPageId;
   });
   const asset: any =
-    post.fields.featuredImage &&
+    post?.fields.featuredImage &&
     (await getDataSinglePostAssets(post.fields.featuredImage.sys.id));
   return { post, asset };
 }
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: any) {
   if (!data) return null;
   const { post, asset } = data;
   return {
-    title: `paolodedomini-Blog ${post.fields.title}`,
+    title: `paolodedomini-Blog ${post?.fields.title}`,
     openGraph: {
-      title: post.fields.title,
+      title: post?.fields.title,
       images: [
         asset
           ? `https:${asset.fields.file.it.url}`
@@ -63,7 +63,7 @@ async function Page({ params }: any) {
             <Link href={post.fields.externalLink}>Articolo Originale</Link>
           </div>
         )}
-        {post && richTextToHtml(post)}
+        {richTextToHtml(post)}
       </div>
     </main>
   );
