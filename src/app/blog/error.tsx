@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Lottie from "lottie-react";
-import errorAnimation from "../../../public/animations/error.json";
+import errorAnimation from "@/animations/error.json";
 
 export default function Error({
   error,
