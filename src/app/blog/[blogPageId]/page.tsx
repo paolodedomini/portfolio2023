@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import style from "./page.module.scss";
 import { title } from "@/utils/fonts";
-
+import { notFound } from "next/navigation";
 import Link from "next/link";
 type Props = {};
 
@@ -43,9 +43,11 @@ export async function generateMetadata({ params }: any) {
 
 async function Page({ params }: any) {
   const data = await getData(params);
-  if (!data) return <h1>no data</h1>;
-  const { post, asset } = data;
+  console.log("data", data);
 
+  if (!data) notFound();
+  const { post, asset } = data;
+  if (!post) notFound();
   return (
     <main className="page">
       <div className={style.wrapperImage}>

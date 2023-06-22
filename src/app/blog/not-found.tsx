@@ -14,9 +14,9 @@ export default function Error({
   return (
     <div className="errorPage">
       <Lottie className="errorAnimation" animationData={errorAnimation} />
-      <h2>Qualcosa non ha funzionato...</h2>
-      <h3>Chissà che &!$$!∞°°@# è successo</h3>
-      <p>{error.stack}</p>
+      <h2>Risorsa non trovata</h2>
+      <h3>controlla che l&apos;indirizzo sia giusto</h3>
+
       <Link href="/"> Torna alla Home</Link>
     </div>
   );
