@@ -1,5 +1,5 @@
 "use client";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useRef, useLayoutEffect, useState } from "react";
 import style from "./page.module.scss";
 import Image from "next/image";
 import backImage from "../../../public/img/truthBall/back.webp";
@@ -9,12 +9,49 @@ import { title } from "@/utils/fonts";
 import getRisposte from "./risposte";
 
 gsap.registerPlugin(Draggable);
-console.log("getRisposte", getRisposte());
 
 type Props = {};
 
 function TruthBall({}: Props) {
   const [risposte, setRisposte] = useState<any>(null);
+  const [isActiveBall, setIsActiveBall] = useState<boolean>(false);
+  const [IsFormDomandaVisible, setIsFormDomandaVisible] =
+    useState<boolean>(true);
+  const [reset, setReset] = useState<boolean>(false);
+  const [domandaVisualizzata, setdomandaVisualizzata] = useState<string>("");
+  const [playBall, setPlayBall] = useState<boolean>(false); // [playBall, setPlayBall
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function checkInput(e: any) {
+    const checkValue = e.target.value;
+    if (checkValue.length > 7) {
+      setIsActiveBall(true);
+    } else {
+      setIsActiveBall(false);
+    }
+  }
+
+  function submitInput() {
+    setIsActiveBall(true);
+    setIsFormDomandaVisible(false);
+    setPlayBall(true);
+    setRisposte("");
+    const risposta = inputRef.current?.value;
+    if (risposta) {
+      setdomandaVisualizzata(risposta);
+    }
+  }
+
+  function Resetter() {
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
+    setdomandaVisualizzata("");
+
+    setIsFormDomandaVisible(true);
+  }
+
+  console.log("domandaVisualizzata", domandaVisualizzata);
 
   useLayoutEffect(() => {
     const centrale = gsap.timeline({ paused: true });
@@ -56,7 +93,7 @@ function TruthBall({}: Props) {
         duration: 1,
         ease: Bounce.easeOut,
       },
-      ">+=4"
+      ">+=2"
     );
     centrale.to(".centrale", {
       rotate: 360 * 1,
@@ -88,6 +125,12 @@ function TruthBall({}: Props) {
 
         centrale.restart();
         setRisposte(getRisposte());
+        setIsFormDomandaVisible(true);
+        setPlayBall(false);
+        setReset(false);
+        if (inputRef.current) {
+          inputRef.current.value = "";
+        }
       },
     });
   }, []);
@@ -101,7 +144,17 @@ function TruthBall({}: Props) {
       }}
       className={style.truthBall}
     >
-      <div className={`${style.wrapperBall} wrapperBall `}>
+      <div className={`${style.testoDomanda} testoDomanda`}>
+        <span className={`${title.className}`}>{domandaVisualizzata}</span>
+      </div>
+      <div className={`${style.testoRisposta} testoRisposta`}>
+        <span className={`${title.className}`}>{risposte?.testo}</span>
+      </div>
+      <div
+        className={`${style.wrapperBall} wrapperBall ${
+          isActiveBall ? style.active : ""
+        } ${!playBall ? "" : style.play} `}
+      >
         <div className="ball">
           <Image
             src="/img/truthball/palla@2x.webp"
@@ -123,9 +176,30 @@ function TruthBall({}: Props) {
           </div>
         </div>
       </div>
-      <div className={`${style.testoRisposta} testoRisposta`}>
-        <span className={`${title.className}`}>{risposte?.testo}</span>
+      <div
+        className={`${style.domanda} ${
+          !IsFormDomandaVisible ? style.notActive : ""
+        } `}
+      >
+        <label htmlFor="testoDomanda">La tua domanda al Negromante</label>
+
+        <input
+          ref={inputRef}
+          id="testoDomanda"
+          name="testo-domanda"
+          type="text"
+          onChange={checkInput}
+        />
+        <button onClick={submitInput}>submit</button>
       </div>
+      <button
+        className={`${style.restart} ${
+          reset && !IsFormDomandaVisible ? style.active : ""
+        }`}
+        onClick={Resetter}
+      >
+        Reset
+      </button>
     </section>
   );
 }

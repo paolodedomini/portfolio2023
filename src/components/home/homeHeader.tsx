@@ -4,7 +4,7 @@ import Image from "next/image";
 import style from "./homeHeader.module.scss";
 import { title } from "@/utils/fonts";
 import { useTransform, useScroll, motion } from "framer-motion";
-import Particle from "./particle";
+
 type Props = {};
 
 function HomeHeader({}: Props) {
@@ -36,7 +36,6 @@ function HomeHeader({}: Props) {
   return (
     <div className={style.wrapperScroll}>
       <header className={style.mainHeader}>
-        <Particle />
         <div className={style.spinnerWrapper}>
           <Image
             className={style.spinner}
@@ -111,7 +110,7 @@ function HomeHeader({}: Props) {
             </motion.div>
           </motion.div>
           <motion.div className={style.text} style={{ y: y }}>
-            <h2 className={title.className}>Digital Design & Frontend</h2>
+            <h1 className={title.className}>Digital Design & Frontend</h1>
             <motion.p style={{ opacity: opacityParagraph }}>
               Progetto e realizzo funzionalità ed estetica di siti e
               applicazioni web. <br />

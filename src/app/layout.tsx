@@ -6,6 +6,7 @@ import Footer from "@/components/footer/footer";
 export const metadata = {
   title: "PdD.com",
   description: "Paolo de Domini personal website",
+  keywords: "js, react, figma, webdesign, frontend",
   openGraph: {
     title: "PdD.com",
     description: "Paolo de Domini personal website",
