@@ -7,7 +7,6 @@
   }
 }
 .doc {
-  height: 240px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -15,6 +14,8 @@
   flex-wrap: wrap;
   @media screen and (max-width: 440px) {
     padding-bottom: 30rem;
+    flex-direction: column;
+    align-items: center;
   }
   .wizhat {
     color: white;
@@ -49,7 +50,7 @@
   justify-content: center;
   @media screen and (max-width: 550px) {
     flex-direction: column;
-    padding: 16rem 20px;
+    padding: 1rem 20px;
   }
   h3 {
     font-size: 3rem;
@@ -84,4 +85,12 @@
   top: 100px !important;
   right: 0 !important;
   left: auto !important;
+}
+.left {
+  img {
+    @media screen and (max-width: 550px) {
+      height: 100px;
+      width: auto;
+    }
+  }
 }
