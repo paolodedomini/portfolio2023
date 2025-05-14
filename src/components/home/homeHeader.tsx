@@ -110,7 +110,7 @@ function HomeHeader({}: Props) {
             </motion.div>
           </motion.div>
           <motion.div className={style.text} style={{ y: y }}>
-            <h1 className={title.className}>Digital Design & Frontend</h1>
+            <h1 className={`${title.className}`}>Digital Design & Frontend</h1>
             <motion.p style={{ opacity: opacityParagraph }}>
               Progetto e realizzo funzionalità ed estetica di siti e
               applicazioni web. <br />
